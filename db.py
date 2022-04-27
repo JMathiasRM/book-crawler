@@ -4,6 +4,7 @@ import os
 
 class Database():
     def __init__(self):
+        # if necessary, replace with working credentials
         self.conn = psycopg2.connect(
             database = os.getenv("POSTGRES_DB"),
             host = os.getenv("POSTGRES_HOST"),
