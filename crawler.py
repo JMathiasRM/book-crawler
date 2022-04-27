@@ -6,7 +6,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 from datetime import date
 import re
-import json
 
 class Crawler:
     def __init__(self):
@@ -80,11 +79,11 @@ class Crawler:
                 day = date.today().strftime('%Y-%m-%d')
 
                 book = {
-                    'Título':title,
-                    'Categoria':cat,
+                    'Título':title.replace("'",''),
+                    'Categoria':cat.replace("'",''),
                     'Preço':price,
                     'Estoque':stock,
-                    'Descrição':desc,
+                    'Descrição':desc.replace("'",''),
                     'Data de crawleamento':day,
                 }
 
